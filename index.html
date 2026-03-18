@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find The Country</title>
+    <meta
+      name="description"
+      content="A fast, client-side country guessing game built for static hosting."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-frame">
+<section class="map-stage">
+          <header class="hero-bar overlay-card">
+            <p class="eyebrow">World Map Challenge</p>
+            <h1 id="prompt" class="prompt">Loading map...</h1>
+            <p id="subprompt" class="subprompt">
+              Pulling country borders and getting the board ready.
+            </p>
+          </header>
+          <div class="zoom-hint overlay-card" aria-hidden="true">
+            Drag to pan · Scroll or pinch to zoom
+          </div>
+          <div class="map-glow map-glow-left" aria-hidden="true"></div>
+          <div class="map-glow map-glow-right" aria-hidden="true"></div>
+          <div id="map" class="map-canvas" aria-label="Interactive world map"></div>
+          <section id="selectionCard" class="selection-card hidden" aria-live="polite">
+            <p class="selection-label">Country selected</p>
+            <button id="confirmSelectionButton" class="primary-button" type="button">
+              Lock In
+            </button>
+          </section>
+          <section id="gameOverCard" class="game-over-card hidden" aria-live="polite">
+            <p class="game-over-label">Game Over</p>
+            <h2 id="gameOverScore" class="game-over-score">Score: 0</h2>
+            <p id="gameOverDetail" class="game-over-detail">
+              One miss ends the run. Start again and try to beat your best streak.
+            </p>
+            <button id="overlayRestartButton" class="primary-button" type="button">
+              Start Again
+            </button>
+          </section>
+          <div class="map-overlay top" aria-hidden="true"></div>
+          <div class="map-overlay bottom" aria-hidden="true"></div>
+        </section>
+
+        <footer class="control-bar">
+          <p id="status" class="status-message" aria-live="polite">
+            Click the country named above.
+          </p>
+          <div class="actions">
+            <button id="resetViewButton" class="ghost-button" type="button">Reset View</button>
+            <button id="restartButton" class="primary-button" type="button">
+              New Game
+            </button>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
